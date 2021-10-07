@@ -1,0 +1,27 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFrameworks>net6.0-android;net6.0-ios</TargetFrameworks>
+		<OutputType>Exe</OutputType>
+		<Nullable>enable</Nullable>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<SupportedOSPlatformVersion Condition="'$(TargetFramework)' == 'net6.0-android'">21</SupportedOSPlatformVersion>
+		<SupportedOSPlatformVersion Condition="'$(TargetFramework)' == 'net6.0-ios'">11.2</SupportedOSPlatformVersion>
+	</PropertyGroup>
+
+	<PropertyGroup>
+		<ApplicationTitle>Multi-Targeting App</ApplicationTitle>
+		<ApplicationId>com.companyname.MultiTargetingApp</ApplicationId>
+		<ApplicationVersion>1</ApplicationVersion>
+		<ApplicationDisplayVersion>1.0</ApplicationDisplayVersion>
+		<AndroidManifest>Platforms\Android\AndroidManifest.xml</AndroidManifest>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<None Include="@(Compile)" />
+		<AndroidResource Include="Platforms\Android\Resources\**" />
+		<Compile Remove="Platforms\Android\**" Condition="'$(TargetFramework)' != 'net6.0-android'" />
+		<Compile Remove="Platforms\iOS\**" Condition="'$(TargetFramework)' != 'net6.0-ios'" />
+	</ItemGroup>
+
+</Project>

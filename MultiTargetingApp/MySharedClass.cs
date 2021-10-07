@@ -4,7 +4,7 @@
 	{
 		public string GreetMe(string name)
 		{
-			return $"Hello there {name}";
+			return $"Hello there {name}!";
 		}
 	}
 }

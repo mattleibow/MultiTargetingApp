@@ -1,13 +1,11 @@
-namespace iOSApp1
+namespace MultiTargetingApp
 {
 	[Register("AppDelegate")]
 	public class AppDelegate : UIApplicationDelegate
 	{
-		public override UIWindow? Window
-		{
-			get;
-			set;
-		}
+		readonly MySharedClass myClass = new();
+
+		public override UIWindow? Window { get; set; }
 
 		public override bool FinishedLaunching(UIApplication application, NSDictionary launchOptions)
 		{
@@ -20,7 +18,7 @@ namespace iOSApp1
 			{
 				BackgroundColor = UIColor.White,
 				TextAlignment = UITextAlignment.Center,
-				Text = "Hello, iOS!"
+				Text = myClass.GreetMe("Matthew"),
 			});
 			Window.RootViewController = vc;
 

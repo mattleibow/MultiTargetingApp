@@ -31,9 +31,9 @@
 		<AndroidResource Include="Platforms\Android\Resources\**" />
 
 		<!-- iOS/Mac Catalyst Things -->
-		<None Include="Platforms\iOS\Info-iOS.plist" LogicalName="Info.plist" Condition="'$(TargetFramework)' == 'net6.0-ios'" />
-		<None Include="Platforms\iOS\Info-MacCatalyst.plist" LogicalName="Info.plist" Condition="'$(TargetFramework)' == 'net6.0-maccatalyst'" />
-		<InterfaceDefinition Include="Platforms\iOS\**\*.storyboard" />
+		<None Include="Platforms\Apple\Info-iOS.plist" LogicalName="Info.plist" Condition="'$(TargetFramework)' == 'net6.0-ios'" />
+		<None Include="Platforms\Apple\Info-MacCatalyst.plist" LogicalName="Info.plist" Condition="'$(TargetFramework)' == 'net6.0-maccatalyst'" />
+		<InterfaceDefinition Include="Platforms\Apple\**\*.storyboard" />
 	</ItemGroup>
 
 </Project>
